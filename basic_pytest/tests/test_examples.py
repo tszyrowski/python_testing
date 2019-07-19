@@ -13,4 +13,7 @@ def test_needs_files(tmpdir):       # create temproraty directory
 def test_fail():
     assert 0
     
-pytest.main()
+class MyPlugin():
+    pass
+    
+pytest.main(["-x"], plugins=[MyPlugin()])
