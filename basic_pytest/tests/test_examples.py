@@ -12,3 +12,5 @@ def test_needs_files(tmpdir):       # create temproraty directory
 @pytest.mark.skip(reason="no way of currently testing this")
 def test_fail():
     assert 0
+    
+pytest.main()
