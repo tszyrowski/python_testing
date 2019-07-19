@@ -46,6 +46,3 @@ class TestAddMinus():
         with pytest.raises(TypeError):
             number_addition(2, 'a')
 
-# Other basic methods
-def test_needs_files(tmpdir):       # create temproraty directory
-    assert os.path.isdir(tmpdir)
