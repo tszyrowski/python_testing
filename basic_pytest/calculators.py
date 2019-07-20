@@ -20,6 +20,3 @@ def number_addition(number1, number2):
 
 def number_substract(number1, number2):
     return number1 - number2
-
-if __name__=='__main__':
-    print(number_to_power(3.5,2.1))
