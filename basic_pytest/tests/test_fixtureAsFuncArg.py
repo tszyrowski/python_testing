@@ -17,6 +17,18 @@ def test_ehlo(smtp_connection):
     assert b'smtp.gmail.com at your service' in msg
     assert b'\nSIZE 35882577\n8BITMIME\nSTARTTLS\nENHANCEDSTATUSCODES\nPIPELINING\nCHUNKING\nSMTPUTF8' in msg
     
+
+def test_function(myfuncarg):
+    ''' the myfuncarg fixture was moved to conftest.py
+    '''
+    assert myfuncarg == 42
+    
+def test_scope(my_called_once):
+    ''' the my_called_once is created with scope=module making it being created once
+    not on the test call as by default.
+    '''
+    assert my_called_once == 1
+
 @pytest.mark.xfail
 def test_1(myNonExistingFixture):
     ''' available fixtures: cache, 
@@ -40,5 +52,4 @@ def test_1(myNonExistingFixture):
                             tmpdir, 
                             tmpdir_factory
     '''
-
     assert 1
