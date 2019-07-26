@@ -16,9 +16,11 @@ def simple_f():
     return 3
 
 def simple_exception():
+    ''' raising Exception for testing purpose'''
     raise ValueError("Exception 123 raised")
 
 def simple_params(param1, param2=1):
+    ''' take params to show testing functionality '''
     return param1 + param2
 
 #===============================================================================
@@ -27,6 +29,9 @@ def simple_params(param1, param2=1):
 
 @pytest.mark.xfail
 def test_function():
+    ''' Compare return valu with expected, 
+    testing should fail, so it is annotated
+    ''' 
     assert simple_f() == 4
 
 @pytest.mark.xfail(raises=AssertionError)
@@ -39,6 +44,7 @@ def test_function_detail_xfail():
 @pytest.mark.xfail
 def test_message():
     """ show message on failure
+    >>> (vPTesing) PS > pytest .\basic_pytest\tests\test_basic_assert.py
     
     ====================================================== FAILURES =======================================================
     ____________________________________________________ test_message _____________________________________________________
@@ -53,6 +59,14 @@ def test_message():
     
     basic_pytest\basic_assert_test.py:19: AssertionError
     =================================== 1 failed, 11 passed, 2 skipped in 0.95 seconds ====================================
+    
+    >       assert simple_f() % 2 == 0, "Value was odd, should be even"
+    E       AssertionError: Value was odd, should be even
+    E       assert (3 % 2) == 0
+    E        +  where 3 = simple_f()
+    
+    basic_pytest\tests\test_basic_assert.py:63: AssertionError
+    ==================================== 1 failed, 5 passed, 3 xfailed in 0.49 seconds ====================================
     """
     assert simple_f() % 2 == 0, "Value was odd, should be even"
     
@@ -73,17 +87,24 @@ def test_expection_with_check():
     
 def test_simple_exception():
     ''' exception message can be matched with re.search in context manager
+    
+    Note: the simple_exception() raises exception with ValueError("Exception 123 raised")
     '''
     with pytest.raises(ValueError, match=r".* 123 .*"):
         simple_exception()
         
 def test_simple_param_oneliner():
     ''' exception can be checked in one line 
+    
+    Note: the simple_params takes to numeric values, when string given:
+    TypeError: can only concatenate str (not "int") to str
     '''
-    pytest.raises(Exception, simple_params, "a", param2=2)
+    pytest.raises(TypeError, simple_params, "a", param2=2)
     
 def test_simple_param_explicit():
     ''' exception can be with explicit call
+    
+    Note: Exceptions can be generalised, though it is not recomended
     '''
     with pytest.raises(Exception):
         simple_params("a", param2=2)
