@@ -9,7 +9,7 @@ The custom message will be automatically imported and used in the output such as
 
 =========================== test session starts ================================
 platform win32 -- Python 3.7.0, pytest-5.0.1, py-1.8.0, pluggy-0.12.0
-rootdir: C:\Users\T\workspace\python_testing
+rootdir: ..\python_testing
 plugins: cov-2.7.1
 collected 1 item
 
@@ -37,7 +37,7 @@ class Foo():
         return self.val == other.val
 
 
-#@pytest.mark.xfail(raises=AssertionError)
+@pytest.mark.xfail(raises=AssertionError)
 def test_compare_custom_msg():
     f1 = Foo(1)
     f2 = Foo(2)
