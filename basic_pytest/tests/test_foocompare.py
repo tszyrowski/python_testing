@@ -1,6 +1,5 @@
 '''
 This script shows creation of a custom messages and comparisons
-
 Pytest can performe custom comparison. The comparison and the custom message 
 is created in coftest.py
 The custom message will be automatically imported and used in the output such as:
