@@ -1,4 +1,4 @@
-'''
+r'''
 This script shows creation of a custom messages and comparisons
 Pytest can performe custom comparison. The comparison and the custom message 
 is created in coftest.py
