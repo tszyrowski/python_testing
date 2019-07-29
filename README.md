@@ -14,3 +14,4 @@ Installing in development mode allows use of saved changes in other script witho
 
 # References:
 - [pytest oficial documentation](https://buildmedia.readthedocs.org/media/pdf/pytest/latest/pytest.pdf)
+- [behave examples](https://jenisys.github.io/behave.example/tutorials/index.html)
