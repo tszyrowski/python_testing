@@ -15,3 +15,4 @@ Installing in development mode allows use of saved changes in other script witho
 # References:
 - [pytest oficial documentation](https://buildmedia.readthedocs.org/media/pdf/pytest/latest/pytest.pdf)
 - [pytest-BDD documentation](https://readthedocs.org/projects/pytest-bdd/)
+- [behave documentation](https://behave.readthedocs.io/en/latest/tutorial.html)

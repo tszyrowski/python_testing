@@ -9,5 +9,6 @@ setup(
     install_requires=[
         "pytest",
         "pytest-bdd",
+        "behave",
     ],
 )
